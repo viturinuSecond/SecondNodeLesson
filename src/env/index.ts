@@ -16,7 +16,11 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333), // render já envia PORT como development, pelo que entendi, em ambiente de produção, mas envia uma string por default, por isso usamos o coerce, pra coagir a transformação dessa String em Number. A porta erscolhida também é feita pela nuvem (provider), logo, trataremos a variavel enviada pelo RENDER lá na nuvem || Não importa o valor recebido da nuvem no PORT, transforme isso em Number; caso isso não consigo ser transformado, coloque como default 3333, pois é um number escolhido por nós(vai dar problema na nuvem, pois essa porta póde estar sendo utilizada por outro projeto ou não ter permissão pra usa-la (caso disponivel))  
 })
 
+
 const _env = envSchema.safeParse(process.env);
+
+console.log("Sua porta definida é: ", _env.data?.PORT);
+
 
 if (_env.success === false) {
   console.error('Invalid environment variables', _env.error.format()); // mostra o erro formatado para melhor compreensão
