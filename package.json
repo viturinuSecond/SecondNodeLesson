@@ -4,7 +4,7 @@
   "description": "teste2",
   "main": "index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.12.2"
   },
   "scripts": {
     "test": "vitest",
