@@ -1,0 +1,35 @@
+{
+  "name": "node2challenge",
+  "version": "1.0.0",
+  "description": "teste2",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "vitest",
+    "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts --fix",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.0",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.0.0",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8"
+  }
+}
